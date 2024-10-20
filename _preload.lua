@@ -6,7 +6,12 @@
 
 premake.extensions.androidmk = premake.extensions.androidmk or {}
 local androidmk = premake.extensions.androidmk
-local make = premake.make
+require('gmake2')
+
+local make = premake.action.get('gmake2')
+if make == nil then
+  error( "Failed to locate prequisite action 'gmake2'" )
+end
 
 
 androidmk.CONFIG_OPTION = "PM5_CONFIG"

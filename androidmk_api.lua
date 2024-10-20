@@ -68,6 +68,11 @@ api.register {
     "android-18",
     "android-19",
     "android-21",
+    "android-22",
+    "android-23",
+    "android-24",
+    "android-25",
+    "android-26",
   },
 }
 

@@ -50,11 +50,10 @@ function androidmk.prjHeader(prj)
 end
 
 function androidmk.prjKind(prj, cfg)
-  if cfg.kind == premake.STATICLIB  then
-    p.w('  include $(BUILD_STATIC_LIBRARY)')
-
-  else -- cfg.kind == premake.SHAREDLIB
+  if cfg.kind == premake.SHAREDLIB or cfg.kind == premake.CONSOLEAPP or cfg.kind == premake.WINDOWAPP then
     p.w('  include $(BUILD_SHARED_LIBRARY)')
+  else -- cfg.kind == premake.SHAREDLIB
+    p.w('  include $(BUILD_STATIC_LIBRARY)')
 
   end
 end
